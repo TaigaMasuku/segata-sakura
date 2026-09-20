@@ -1,0 +1,20 @@
+SEGATA SAKURA — composants et provenance
+
+L'interface C# Segata Sakura est un développement original ; ses sources et son script de compilation sont fournis dans sources/segata-sakura. DuckStation a servi de référence ergonomique, sans copie de code.
+
+Kronos 2.7.0 : FCare et contributeurs Yabause/UoYabause/Yaba Sanshiro. GPL, voir licenses/KRONOS-COPYING.txt et les notices individuelles des sources.
+Binaire Windows inchangé issu du dossier fourni par l'utilisateur. Sources amont du tag 2.7.0_official_release, commit 58352d6dc969fa90c5fa1220f38ffe577157547f, incluses dans sources/kronos-2.7.0-sources.zip.
+https://github.com/FCare/Kronos
+La correspondance exacte entre ce binaire tiers et ce tag n'a pas été établie par une recompilation reproductible. À vérifier auprès du distributeur du binaire avant une publication définitive.
+
+Qt 5.14.2 : The Qt Company et contributeurs. Bibliothèques partagées conservées séparément, remplaçables. Licences et sources des modules Qt Base, SVG, Multimedia, Image Formats et Translations fournies. Les composants tiers de Qt (dont ANGLE) ont leurs propres notices dans ces sources. Aucun obstacle supplémentaire à la modification ou au débogage des composants libres n'est ajouté par cette interface.
+https://download.qt.io/archive/qt/5.14/5.14.2/submodules/
+
+SDL 2.30.10 : Sam Lantinga et contributeurs ; licence zlib, texte et sources inclus.
+https://github.com/libsdl-org/SDL/releases/tag/release-2.30.10
+
+Microsoft Visual C++ Redistributable : Microsoft, installateur signé fourni sans modification. d3dcompiler_47.dll : Microsoft. opengl32sw.dll : moteur logiciel livré dans le paquet Qt/Kronos ; provenance de compilation et notices complémentaires à confirmer auprès du distributeur.
+
+Logo Sakura : adapté par génération d'image à partir d'une image fournie par l'utilisateur, issue de Sakura Taisen. Les droits sur les personnages et illustrations ne sont pas attribués au projet. Application non officielle, sans affiliation Sega.
+
+Cette livraison constitue une bêta technique. Les sources et licences disponibles sont embarquées ; la validation définitive de la provenance de tous les binaires et des droits du logo reste à faire avant une diffusion publique présentée comme validée.

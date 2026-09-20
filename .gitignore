@@ -1,0 +1,29 @@
+# Programmes compilés, paquets et composants récupérés séparément
+*.exe
+*.dll
+*.zip
+*.7z
+*.tar.xz
+*.pdb
+app/engine/
+app/sources/
+installateur/
+# Données personnelles et images de disques
+settings.xml*
+covers/
+*.bin
+*.cue
+*.iso
+*.chd
+*.rom
+*.ram
+*.yss
+*.ini
+!app/engine-default.ini
+scan-errors.txt
+test-results.txt
+test-fixtures-*/
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db

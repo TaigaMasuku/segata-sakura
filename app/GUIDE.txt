@@ -1,0 +1,20 @@
+SEGATA SAKURA 0.2.0
+
+1. Configuration : choisir votre BIOS Saturn, puis Enregistrer.
+   Alternative : cocher le BIOS émulé, dont la compatibilité varie.
+   Le moteur Kronos est déjà inclus et sélectionné.
+2. Ouvrir un jeu : sélectionner un fichier CUE, ISO ou CHD.
+   + Dossier : choisir le dossier de votre collection dans la fenêtre Windows avec barre d'adresse, recherche et accès rapides.
+3. Jouer : Kronos démarre dans sa propre fenêtre.
+
+Un fichier CUE et toutes ses pistes BIN doivent rester ensemble. Le programme signale les pistes absentes.
+Jaquette permet d'ajouter une illustration locale à un jeu.
+Les manettes et les réglages graphiques se configurent dans Configuration > Ouvrir les réglages de Kronos.
+
+Vos paramètres et jaquettes sont conservés dans %LOCALAPPDATA%\SegataSakura. Les paramètres Kronos restent dans engine\kronos.ini et ne sont pas remplacés par les mises à jour. Les sauvegardes de jeu sont gérées par Kronos ; leur emplacement est configurable dans Kronos.
+
+Installation : %LOCALAPPDATA%\Programs\SegataSakura par défaut. Désinstallation depuis les applications Windows. Les données personnelles restent conservées.
+
+Cette version est une bibliothèque Windows qui pilote Kronos. Aucun code DuckStation n'est intégré. Pas encore de mode salon, de changement de disque ou de sauvegardes instantanées dans notre interface.
+
+Les jeux, le BIOS, le son et la manette n'ont pas été testés en partie réelle. Le fonctionnement de l'installation et les contrôles de bibliothèque font l'objet de tests séparés.
