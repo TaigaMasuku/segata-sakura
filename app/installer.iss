@@ -1,9 +1,9 @@
-#define AppVersion "0.2.0"
+﻿#define AppVersion "0.2.3"
 [Setup]
 AppId={{C5523D33-90BE-4AAB-9508-E0770C6BA501}
 AppName=Segata Sakura
 AppVersion={#AppVersion}
-AppPublisher=Projet Segata Sakura
+AppPublisher=Segata Sakura Project
 DefaultDirName={code:DefaultInstallDir}
 DefaultGroupName=Segata Sakura
 DisableProgramGroupPage=yes
@@ -13,28 +13,32 @@ ArchitecturesInstallIn64BitMode=x64
 MinVersion=10.0
 OutputDir=..\installateur
 OutputBaseFilename=SegataSakura-Setup-{#AppVersion}-x64
-SetupIconFile=sakura.ico
-UninstallDisplayIcon={app}\SegataSakura.exe
+SetupIconFile=sakura-v022.ico
+UninstallDisplayIcon={app}\sakura-v022.ico
 Compression=lzma2/fast
 SolidCompression=yes
 WizardStyle=modern
 WizardSizePercent=110
 CloseApplications=yes
 RestartApplications=no
+DisableWelcomePage=no
+DisableDirPage=no
+DisableReadyPage=no
+ShowLanguageDialog=no
 InfoBeforeFile=INSTALLATION.txt
 UninstallDisplayName=Segata Sakura
 CreateUninstallRegKey=not IsSmokeTest
 
 [Languages]
-Name: "french"; MessagesFile: "compiler:Languages\French.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
-Name: "desktopicon"; Description: "Créer un raccourci sur le Bureau"; GroupDescription: "Raccourcis :"
+Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Shortcuts:"
 
 [Files]
-Source: "SegataSakura-0.2.exe"; DestDir: "{app}"; DestName: "SegataSakura.exe"; Flags: ignoreversion
+Source: "SegataSakura-0.2.3.exe"; DestDir: "{app}"; DestName: "SegataSakura.exe"; Flags: ignoreversion
 Source: "sakura-logo.png"; DestDir: "{app}"; Flags: ignoreversion
-Source: "sakura.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "sakura-v022.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "GUIDE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "NOTICES.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "KRONOS-COPYING.txt"; DestDir: "{app}\licenses"; Flags: ignoreversion
@@ -48,15 +52,15 @@ Source: "sources\*"; DestDir: "{app}\sources"; Flags: ignoreversion
 Source: "src\*.cs"; DestDir: "{app}\sources\segata-sakura\src"; Flags: ignoreversion
 Source: "build.ps1"; DestDir: "{app}\sources\segata-sakura"; Flags: ignoreversion
 Source: "app.manifest"; DestDir: "{app}\sources\segata-sakura"; Flags: ignoreversion
-Source: "sakura.ico"; DestDir: "{app}\sources\segata-sakura"; Flags: ignoreversion
+Source: "sakura-v022.ico"; DestDir: "{app}\sources\segata-sakura"; Flags: ignoreversion
 Source: "installer.iss"; DestDir: "{app}\sources\segata-sakura"; Flags: ignoreversion
 
 [Icons]
-Name: "{userprograms}\Segata Sakura"; Filename: "{app}\SegataSakura.exe"; WorkingDir: "{app}"; Check: not IsSmokeTest
+Name: "{userprograms}\Segata Sakura"; Filename: "{app}\SegataSakura.exe"; WorkingDir: "{app}"; IconFilename: "{app}\sakura-v022.ico"; IconIndex: 0; Check: not IsSmokeTest
 Name: "{userdesktop}\Segata Sakura"; Filename: "{app}\SegataSakura.exe"; WorkingDir: "{app}"; Tasks: desktopicon; Check: not IsSmokeTest
 
 [Run]
-Filename: "{app}\SegataSakura.exe"; Description: "Ouvrir Segata Sakura"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\SegataSakura.exe"; Description: "Launch Segata Sakura"; Flags: nowait postinstall skipifsilent
 
 [Code]
 function IsSmokeTest: Boolean;
@@ -84,9 +88,9 @@ begin
  if NeedsVCRuntime then begin
   ExtractTemporaryFile('vc_redist.x64.exe');
   if not ShellExec('runas', ExpandConstant('{tmp}\vc_redist.x64.exe'), '/install /passive /norestart', '', SW_SHOWNORMAL, ewWaitUntilTerminated, Code) then
-   Result := 'Le composant Microsoft Visual C++ est nécessaire à Kronos. Son installation a été annulée ou refusée. Relancez cet installateur pour réessayer.'
+   Result := 'Kronos requires Microsoft Visual C++. Installation was cancelled or denied. Run this installer again to retry.'
   else if (Code <> 0) and (Code <> 3010) and (Code <> 1638) then
-   Result := 'Le composant Microsoft Visual C++ ne s''est pas installé (code ' + IntToStr(Code) + ').'
+   Result := 'Microsoft Visual C++ installation failed (code ' + IntToStr(Code) + ').'
   else if Code = 3010 then NeedsRestart := True;
  end;
 end;

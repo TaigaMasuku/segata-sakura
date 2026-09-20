@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 namespace SaturnApp {
@@ -25,7 +25,7 @@ internal static class FolderPicker {
  }
  public static string Choose(IWin32Window owner) {
   var dialog=(IFileDialog)new FileOpenDialog();IShellItem item=null;IntPtr name=IntPtr.Zero;
-  try {uint options;dialog.GetOptions(out options);dialog.SetOptions(options|0x20u|0x40u|0x800u);dialog.SetTitle("Choisir le dossier de vos jeux Saturn");dialog.SetOkButtonLabel("Ajouter ce dossier");
+  try {uint options;dialog.GetOptions(out options);dialog.SetOptions(options|0x20u|0x40u|0x800u);dialog.SetTitle(L.T("Choose your Saturn games folder"));dialog.SetOkButtonLabel(L.T("Add this folder"));
    int result=dialog.Show(owner.Handle);if(result==unchecked((int)0x800704C7))return null;Marshal.ThrowExceptionForHR(result);
    dialog.GetResult(out item);item.GetDisplayName(0x80058000,out name);return Marshal.PtrToStringUni(name);
   } finally {if(name!=IntPtr.Zero)Marshal.FreeCoTaskMem(name);if(item!=null)Marshal.ReleaseComObject(item);Marshal.ReleaseComObject(dialog);}

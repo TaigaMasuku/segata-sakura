@@ -1,9 +1,13 @@
-SEGATA SAKURA — version 0.2.0 bêta
+﻿SEGATA SAKURA - version 0.2.3 beta
 
-Cet installateur contient l'application, Kronos 2.7.0 et ses bibliothèques. Aucune installation préalable de Kronos n'est nécessaire.
+This installer includes Segata Sakura, Kronos 2.7.0 and its libraries. No previous Kronos installation is required.
 
-Windows 10/11 64 bits. Le composant Microsoft Visual C++ inclus sera proposé si nécessaire ; cette étape peut demander une autorisation administrateur.
+Requirements: Windows 10 or 11, 64-bit. Microsoft Visual C++ is included and will be installed if needed. Windows may request administrator approval for this prerequisite.
 
-Les jeux et le BIOS Saturn ne sont pas inclus. Après installation, choisissez votre BIOS dans Configuration puis cliquez sur Ouvrir un jeu ou + Dossier.
+After installation, launch Segata Sakura. The setup assistant guides you through language, BIOS, game folders, controller settings and display preferences.
 
-La désinstallation conserve vos réglages personnels. Version non signée, testée sans partie réelle : les performances dépendent de Kronos et de votre matériel.
+Application languages: English, French, Spanish, Portuguese (Portugal) and Portuguese (Brazil). The installer stays in English. Kronos uses its own language settings.
+
+Games and Saturn BIOS files are not included. You may select your own BIOS and game folders during configuration or add them later.
+
+Uninstalling preserves your personal settings. This is an unsigned beta. Actual gameplay, audio, controller compatibility and a clean Windows installation still require validation.

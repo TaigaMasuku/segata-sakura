@@ -1,20 +1,48 @@
-SEGATA SAKURA 0.2.0
+﻿SEGATA SAKURA 0.2.3 BETA
 
-1. Configuration : choisir votre BIOS Saturn, puis Enregistrer.
-   Alternative : cocher le BIOS émulé, dont la compatibilité varie.
-   Le moteur Kronos est déjà inclus et sélectionné.
-2. Ouvrir un jeu : sélectionner un fichier CUE, ISO ou CHD.
-   + Dossier : choisir le dossier de votre collection dans la fenêtre Windows avec barre d'adresse, recherche et accès rapides.
-3. Jouer : Kronos démarre dans sa propre fenêtre.
+Run Segata Sakura after installation. The first-run assistant offers:
+1. Application language: English, French, Spanish, Portuguese (Portugal), Portuguese (Brazil).
+2. Saturn BIOS: select your file, choose experimental emulation, or leave it for later.
+3. Game folders: add folders with CUE and tracks, ISO or CHD images.
+4. Controller: after the assistant, use Settings > Controller in Segata Sakura.
+5. Display: select fullscreen; advanced rendering options are in Kronos.
+6. Finish: save settings and open the game library.
 
-Un fichier CUE et toutes ses pistes BIN doivent rester ensemble. Le programme signale les pistes absentes.
-Jaquette permet d'ajouter une illustration locale à un jeu.
-Les manettes et les réglages graphiques se configurent dans Configuration > Ouvrir les réglages de Kronos.
+Settings opens a category-based panel: Interface, Game folders, BIOS, Graphics and filters, Audio, Controller and Emulation. Cancel leaves your application settings unchanged. Changes saved in Kronos itself are independent.
+Keep each CUE and its tracks together. Open a game selects a disc image. Cover adds local artwork.
 
-Vos paramètres et jaquettes sont conservés dans %LOCALAPPDATA%\SegataSakura. Les paramètres Kronos restent dans engine\kronos.ini et ne sont pas remplacés par les mises à jour. Les sauvegardes de jeu sont gérées par Kronos ; leur emplacement est configurable dans Kronos.
+The installer stays in English. Segata Sakura supports five languages. Native Windows dialogs and Kronos use their own language settings; games are not translated by this option.
 
-Installation : %LOCALAPPDATA%\Programs\SegataSakura par défaut. Désinstallation depuis les applications Windows. Les données personnelles restent conservées.
+Application data: %LOCALAPPDATA%\SegataSakura
+Default installation: %LOCALAPPDATA%\Programs\SegataSakura
+Uninstalling preserves personal settings. Kronos settings are in engine\kronos.ini and are retained during upgrades. Game saves are managed by Kronos.
 
-Cette version est une bibliothèque Windows qui pilote Kronos. Aucun code DuckStation n'est intégré. Pas encore de mode salon, de changement de disque ou de sauvegardes instantanées dans notre interface.
+Games and BIOS are not included. Actual gameplay, audio, controllers and a clean Windows installation still require validation. No dedicated living-room mode, integrated save states or disc swapping is provided yet.
 
-Les jeux, le BIOS, le son et la manette n'ont pas été testés en partie réelle. Le fonctionnement de l'installation et les contrôles de bibliothèque font l'objet de tests séparés.
+GRAPHICS AND FILTERS
+Image filter: none, bilinear, bicubic, adaptive/Bob deinterlacing, scanlines.
+Upscaling: none, HQ4x, 4xBRZ, 6xBRZ.
+Internal resolution: 1x, 2x, 4x or window resolution.
+Aspect ratio, VSync, FPS display and audio volume are configurable.
+These values are written to the bundled engine/kronos.ini and take effect on the next game launch. Close Kronos before saving. A .segata.bak backup is created when its INI changes. Unknown settings and controller mappings are preserved.
+The visible result and performance depend on the Kronos renderer and the game; these effects have not been verified in actual gameplay.
+
+The library can scan subfolders and minimize while a game is running. Removing a folder from the library does not delete its files.
+
+CONTROLLERS (PLAYER 1)
+Connect your USB controller before opening Settings > Controller. Select the connected device and a preset, click Apply preset, review the bindings, then Save. Click any binding to capture a key, mouse button or USB control; Escape cancels.
+Profiles: keyboard (Mednafen), AZERTY keyboard, keyboard + mouse buttons, Saturn mouse, PlayStation 1/2 USB adapters, PlayStation 3/4/5 and Xbox.
+PlayStation and Xbox profiles use SDL's standardized bindings from the actual connected device. Unsupported adapters require manual assignment. PS1/PS2 require USB adapters; some controllers require a suitable Windows driver. Profiles are not a guarantee that every adapter or driver works. Keep USB connection order unchanged; refresh and reapply mappings if it changes. The current editor configures player 1; changing the input backend to SDL also affects any existing player 2 backend-specific mappings.
+Saturn button layout for recognized gamepads: A=south/Cross/A, B=east/Circle/B, C=right shoulder, X=west/Square/X, Y=north/Triangle/Y, Z=left shoulder, L/R=left/right triggers, Start=Start/Options.
+Keyboard preset: WASD, Enter, numpad 1/2/3=A/B/C, 4/5/6=X/Y/Z, 7/9=L/R. AZERTY replaces WASD with ZQSD. Keyboard + mouse uses left/right/middle mouse buttons for A/B/C. True Saturn mouse mode only works in games supporting the Saturn mouse.
+Reference: https://mednafen.github.io/documentation/ss.html#Section_default_keys
+Reference: https://docs.libretro.com/library/beetle_saturn/
+
+REGIONAL BIOS
+Select your own Japan, USA and Europe BIOS files in Settings > BIOS. Automatic mode reads Saturn headers in CUE/ISO images. CHD, unknown or multi-region images use the configured fallback region (Japan by default; a supported region is chosen for detected multi-region discs). Manual selection overrides detection. Existing single-BIOS settings remain a fallback until regional slots are configured. No BIOS files are distributed and filenames are not a region validation.
+
+AUDIO AND FAST-FORWARD
+Use the volume slider, mute/restore or reset to 100%. These settings apply on the next launch. Settings > Emulation exposes Kronos' unlimited fast-forward through its VSync/frame limiter setting. F4 toggles that limiter in-game with Kronos' default shortcuts. This is not a fixed 2x/4x speed. Hardware and rendering affect the resulting speed.
+
+VALIDATION
+Input capture is tested with an SDL virtual controller (buttons, hat and axis) and SDL mapping bindings. Physical USB controllers and actual gameplay are not yet validated.

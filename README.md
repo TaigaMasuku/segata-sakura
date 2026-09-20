@@ -4,7 +4,7 @@ Interface Windows pour une bibliothèque de jeux Sega Saturn, utilisant Kronos c
 
 **Interface modifiée et clarifiée, intégration et présentation par Taiga Masuku, alias Théo M.** Le cœur et le binaire Kronos 2.7.0 ne sont pas modifiés par cette version.
 
-État : bêta 0.2.0. Les tests de bibliothèque et les essais isolés d'installation passent ; les parties réelles, audio, manettes et l'installation sur un Windows vierge restent à valider. Aucun jeu ni BIOS n'est fourni.
+État : bêta 0.2.3. Les tests de bibliothèque et les essais isolés d'installation passent ; les parties réelles, audio, manettes et l'installation sur un Windows vierge restent à valider. Aucun jeu ni BIOS n'est fourni.
 
 ## Dossiers
 
@@ -22,7 +22,7 @@ Depuis PowerShell, à la racine du dépôt :
 powershell -ExecutionPolicy Bypass -File .\app\build.ps1
 ```
 
-Le résultat est `app/SegataSakura-0.2.exe`. Le script de build est lisible et ne télécharge rien. Les icônes nécessaires sont incluses.
+Le résultat est `app/SegataSakura-0.2.3.exe`. Le script de build est lisible et ne télécharge rien. Les icônes nécessaires sont incluses.
 
 Les binaires Kronos et ses DLL ne sont pas versionnés dans Git. Pour exécuter localement la bibliothèque avec le moteur, placer le paquet Windows complet de Kronos 2.7.0 dans `app/engine`, avec `kronos.exe`, ses DLL et ses dossiers de plugins. Ne copier ni BIOS ni jeu dans ce dépôt.
 
@@ -41,3 +41,15 @@ Joindre l'EXE d'installation et SHA256.txt à une GitHub Release, pas à un comm
 Kronos et ses composants conservent leurs licences. Ce dépôt ne prétend pas relicencier leurs sources ou le logo Sakura. La licence de réutilisation de l'interface originale reste à décider par son auteur avant de présenter le projet comme open source. Mettre des sources sur GitHub ne définit pas à lui seul une licence de réutilisation.
 
 Projet de fans indépendant, sans affiliation officielle avec Sega.
+
+## Version 0.2.3
+
+Installateur en anglais et assistant au premier démarrage : langue, BIOS, dossiers, manette, affichage et récapitulatif. L’interface propose anglais, français, espagnol, portugais européen et portugais brésilien. Les réglages natifs de Kronos gardent leur propre langue.
+
+## Paramètres et icône
+
+L’icône Windows contient sept tailles, de 16 à 256 pixels. Le panneau Configuration comprend Interface, Dossiers de jeux, BIOS, Graphismes et filtres, Audio et Manette. Les options vidéo/audio sont reliées aux clés de Kronos 2.7.0 ; voir `app/src/EnginePreferences.cs`. Les effets en jeu restent à valider.
+
+## Version 0.2.3
+
+Attribution des commandes du joueur 1 directement dans l’interface : clavier, souris et profils USB PlayStation/Xbox utilisant les liaisons SDL du périphérique connecté. Ajout de trois emplacements BIOS régionaux, d’un curseur de volume, de l’avance rapide illimitée et de drapeaux dessinés dans le choix de langue. Les essais avec manettes physiques restent à faire.
